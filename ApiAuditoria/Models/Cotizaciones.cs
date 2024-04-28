@@ -5,9 +5,9 @@ namespace ApiAuditoria.Models
     [Keyless]
     public class Cotizaciones
     {
-        public int co_empresa {get; set;}
-        public int co_moneda_base { get; set; }
-        public int co_moneda_destino { get; set; }
+        public Int16 co_empresa {get; set;}
+        public Int16 co_moneda_base { get; set; }
+        public Int16 co_moneda_destino { get; set; }
         public double co_cotizacion { get; set; }
         public DateTime co_fecha_vigencia { get; set; }
         public string? co_estado { get; set; }

@@ -5,14 +5,14 @@ namespace ApiAuditoria.Models
     [Keyless]
     public class AuditoriaDocumentoProcesos
     {
-        public int ad_empresa { get; set; }
+        public Int16 ad_empresa { get; set; }
         public int ad_auditoria { get; set; }
-        public int ad_tarea { get; set; }
-        public int ad_codigo { get; set; }
+        public Int16 ad_tarea { get; set; }
+        public Int16 ad_codigo { get; set; }
         public int ad_secuencia { get; set; }
         public DateTime ad_fecha { get; set; }
-        public string? ad_auditor { get; set; }
-        public string? ad_responsable { get; set; }
+        public Int16 ad_auditor { get; set; }
+        public Int16 ad_responsable { get; set; }
         public string? ad_observaciones { get; set; }
         public string? ad_documento { get; set; }
         public string? ad_estado { get; set; }

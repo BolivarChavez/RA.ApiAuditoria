@@ -48,7 +48,7 @@ namespace ApiAuditoria.Controllers
         }
 
         [HttpGet]
-        [Route("Consulta")]
+        [Route("Consulta/{empresa}")]
         public IEnumerable<CatalogoPlantillas> Get(int empresa)
         {
             List<CatalogoPlantillas> list_catalogo_plantillas;

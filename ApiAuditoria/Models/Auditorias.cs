@@ -5,11 +5,11 @@ namespace ApiAuditoria.Models
     [Keyless]
     public class Auditorias
     {
-        public int au_empresa {get; set;}
+        public Int16 au_empresa {get; set;}
         public int au_codigo { get; set; }
-        public int au_oficina_origen { get; set; }
-        public int au_oficina_destino { get; set; }
-        public int au_tipo_proceso { get; set; }
+        public Int16 au_oficina_origen { get; set; }
+        public Int16 au_oficina_destino { get; set; }
+        public Int16 au_tipo_proceso { get; set; }
         public DateTime au_fecha_inicio { get; set; }
         public DateTime au_fecha_cierre { get; set; }
         public string? au_tipo { get; set; }

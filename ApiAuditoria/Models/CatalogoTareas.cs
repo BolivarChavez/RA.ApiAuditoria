@@ -5,9 +5,9 @@ namespace ApiAuditoria.Models
     [Keyless]
     public class CatalogoTareas
     {
-        public int ct_empresa {get; set;}
-        public int ct_proceso { get; set; }
-        public int ct_codigo { get; set; }
+        public Int16 ct_empresa {get; set;}
+        public Int16 ct_proceso { get; set; }
+        public Int16 ct_codigo { get; set; }
         public string? ct_descripcion { get; set; }
         public string? ct_estado { get; set; }
         public string? ct_usuario_creacion { get; set; }

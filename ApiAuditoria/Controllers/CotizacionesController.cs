@@ -48,7 +48,7 @@ namespace ApiAuditoria.Controllers
         }
 
         [HttpGet]
-        [Route("Consulta")]
+        [Route("Consulta/{empresa}/{monedaBase}/{monedaDestino}/{anio}")]
         public IEnumerable<Cotizaciones> Get(int empresa, int monedaBase, int monedaDestino, int anio)
         {
             List<Cotizaciones> list_cotizaciones;

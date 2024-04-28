@@ -5,11 +5,11 @@ namespace ApiAuditoria.Models
     [Keyless]
     public class Responsables
     {
-        public int re_empresa {get; set;}
-        public int re_codigo { get; set; }
+        public Int16 re_empresa {get; set;}
+        public Int16 re_codigo { get; set; }
         public string? re_nombre { get; set; }
         public string? re_cargo { get; set; }
-        public int re_oficina { get; set; }
+        public Int16 re_oficina { get; set; }
         public string? re_tipo { get; set; }
         public string? re_correo { get; set; }
         public string? re_usuario { get; set; }

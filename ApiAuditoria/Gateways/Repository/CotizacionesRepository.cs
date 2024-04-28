@@ -2,7 +2,7 @@
 using ApiAuditoria.Interfaces;
 using ApiAuditoria.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace ApiAuditoria.Gateways.Repository
 {
@@ -41,7 +41,7 @@ namespace ApiAuditoria.Gateways.Repository
 
             List<SqlParameter> parms = new List<SqlParameter>
             {
-                new SqlParameter { ParameterName = "@i_ct_empresa", Value = empresa},
+                new SqlParameter { ParameterName = "@i_co_empresa", Value = empresa},
                 new SqlParameter { ParameterName = "@i_co_moneda_base", Value = monedaBase},
                 new SqlParameter { ParameterName = "@i_co_moneda_destino", Value = monedaDestino},
                 new SqlParameter { ParameterName = "@i_anio", Value = anio}

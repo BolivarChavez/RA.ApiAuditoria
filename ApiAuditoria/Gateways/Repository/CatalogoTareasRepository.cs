@@ -2,7 +2,7 @@
 using ApiAuditoria.Interfaces;
 using ApiAuditoria.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 namespace ApiAuditoria.Gateways.Repository
 {

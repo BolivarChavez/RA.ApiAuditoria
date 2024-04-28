@@ -2,8 +2,7 @@
 using ApiAuditoria.Interfaces;
 using ApiAuditoria.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Data.SqlClient;
-using System.Threading;
+using Microsoft.Data.SqlClient;
 
 namespace ApiAuditoria.Gateways.Repository
 {
