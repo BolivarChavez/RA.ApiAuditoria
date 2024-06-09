@@ -13,6 +13,7 @@ namespace ApiAuditoria.Models
         public Int16 at_responsable { get; set; }
         public DateTime at_fecha { get; set; }
         public string? at_observaciones { get; set; }
+        public string? at_documento { get; set; }
         public string? at_estado { get; set; }
         public string? at_usuario_creacion { get; set; }
         public DateTime at_fecha_creacion { get; set; }

@@ -17,7 +17,7 @@ namespace ApiAuditoria.Gateways.Repository
 
         public IEnumerable<Retorno> Actualizacion(AuditoriaTareaProcesos auditoriaTareaProcesos)
         {
-            string sp_api = "EXEC api_ActualizaAuditoriaTareaProcesos @i_at_empresa, @i_at_auditoria, @i_at_tarea, @i_at_secuencia, @i_at_auditor, @i_at_responsable, @i_at_fecha, @i_at_observaciones, @i_at_estado, @i_Operador, @o_return, @o_msg";
+            string sp_api = "EXEC api_ActualizaAuditoriaTareaProcesos @i_at_empresa, @i_at_auditoria, @i_at_tarea, @i_at_secuencia, @i_at_auditor, @i_at_responsable, @i_at_fecha, @i_at_observaciones, @i_at_documento, @i_at_estado, @i_Operador, @o_return, @o_msg";
 
             List<SqlParameter> parms = new List<SqlParameter>
             {
@@ -29,6 +29,7 @@ namespace ApiAuditoria.Gateways.Repository
                 new SqlParameter { ParameterName = "@i_at_responsable", Value = auditoriaTareaProcesos.at_responsable},
                 new SqlParameter { ParameterName = "@i_at_fecha", Value = auditoriaTareaProcesos.at_fecha},
                 new SqlParameter { ParameterName = "@i_at_observaciones", Value = auditoriaTareaProcesos.at_observaciones},
+                new SqlParameter { ParameterName = "@i_at_documento", Value = auditoriaTareaProcesos.at_documento},
                 new SqlParameter { ParameterName = "@i_at_estado", Value = auditoriaTareaProcesos.at_estado},
                 new SqlParameter { ParameterName = "@i_Operador", Value = auditoriaTareaProcesos.at_usuario_creacion},
                 new SqlParameter { ParameterName = "@o_return", Value = 0},
@@ -54,7 +55,7 @@ namespace ApiAuditoria.Gateways.Repository
 
         public IEnumerable<Retorno> Ingreso(AuditoriaTareaProcesos auditoriaTareaProcesos)
         {
-            string sp_api = "EXEC api_IngresoAuditoriaTareaProcesos @i_at_empresa, @i_at_auditoria, @i_at_tarea, @i_at_secuencia, @i_at_auditor, @i_at_responsable, @i_at_fecha, @i_at_observaciones, @i_at_estado, @i_Operador, @o_return, @o_msg";
+            string sp_api = "EXEC api_IngresoAuditoriaTareaProcesos @i_at_empresa, @i_at_auditoria, @i_at_tarea, @i_at_secuencia, @i_at_auditor, @i_at_responsable, @i_at_fecha, @i_at_observaciones, @i_at_documento, @i_at_estado, @i_Operador, @o_return, @o_msg";
 
             List<SqlParameter> parms = new List<SqlParameter>
             {
@@ -66,6 +67,7 @@ namespace ApiAuditoria.Gateways.Repository
                 new SqlParameter { ParameterName = "@i_at_responsable", Value = auditoriaTareaProcesos.at_responsable},
                 new SqlParameter { ParameterName = "@i_at_fecha", Value = auditoriaTareaProcesos.at_fecha},
                 new SqlParameter { ParameterName = "@i_at_observaciones", Value = auditoriaTareaProcesos.at_observaciones},
+                new SqlParameter { ParameterName = "@i_at_documento", Value = auditoriaTareaProcesos.at_documento},
                 new SqlParameter { ParameterName = "@i_at_estado", Value = auditoriaTareaProcesos.at_estado},
                 new SqlParameter { ParameterName = "@i_Operador", Value = auditoriaTareaProcesos.at_usuario_creacion},
                 new SqlParameter { ParameterName = "@o_return", Value = 0},
