@@ -15,6 +15,21 @@ namespace ApiAuditoria.Controllers
             _repository = repository;
         }
 
+        /// <summary>
+        /// Asigna un responsable a una tarea relacionada a una auditoria
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// aa_empresa : Codigo de la empresa <br />
+        /// aa_auditoria : Codigo de la auditoria <br />
+        /// aa_tarea : Codigo de la tarea asignada a la auditoria <br />
+        /// aa_secuencia : Secuencia de asignacion de tarea <br />
+        /// aa_responsable : Codigo del responsable asignado a la tarea <br />
+        /// aa_tipo : Tipo de responsable. Responsable de Aduitoria (R), Conocimiento de proceso (P), Capacitacion (C) <br />
+        /// aa_rol : Para aquellos que son responsables, indica si es Auditor (A) o Supervisor o Jefe (J) <br />
+        /// aa_estado : Indica si el registro esta Activo (A), Inactivo (I) o Eliminado (X) <br /><br />
+        /// Procedimiento almacenado : api_IngresoAuditoriaAsignacion
+        /// </remarks>
         [HttpPost]
         [Route("Ingreso")]
         public async Task<string> Ingreso([FromBody] AuditoriaAsignacion auditoriaAsignacion)
@@ -31,6 +46,21 @@ namespace ApiAuditoria.Controllers
             return JSONString;
         }
 
+        /// <summary>
+        /// Actualiza una tarea de auditoria que ha sido previamente asignada a un responsable
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// aa_empresa : Codigo de la empresa <br />
+        /// aa_auditoria : Codigo de la auditoria <br />
+        /// aa_tarea : Codigo de la tarea asignada a la auditoria <br />
+        /// aa_secuencia : Secuencia de asignacion de tarea <br />
+        /// aa_responsable : Codigo del responsable asignado a la tarea <br />
+        /// aa_tipo : Tipo de responsable. Responsable de Aduitoria (R), Conocimiento de proceso (P), Capacitacion (C) <br />
+        /// aa_rol : Para aquellos que son responsables, indica si es Auditor (A) o Supervisor o Jefe (J) <br />
+        /// aa_estado : Indica si el registro esta Activo (A), Inactivo (I) o Eliminado (X) <br /><br />
+        /// Procedimiento almacenado : api_ActualizaAuditoriaAsignacion
+        /// </remarks>
         [HttpPost]
         [Route("Actualizacion")]
         public async Task<string> Actualizacion([FromBody] AuditoriaAsignacion auditoriaAsignacion)
@@ -47,6 +77,16 @@ namespace ApiAuditoria.Controllers
             return JSONString;
         }
 
+        /// <summary>
+        /// Consulta los responsables asignados a una tarea relacionada a una auditoria
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// empresa : Codigo de la empresa <br />
+        /// auditoria : Codigo de la auditoria <br />
+        /// tarea : Codigo de la tarea asignada a la auditoria <br /><br />
+        /// Procedimiento almacenado : api_ConsultaAuditoriaAsignacion
+        /// </remarks>
         [HttpGet]
         [Route("Consulta/{empresa}/{auditoria}/{tarea}")]
         public IEnumerable<AuditoriaAsignacion> Get(int empresa, int auditoria, int tarea)

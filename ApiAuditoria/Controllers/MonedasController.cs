@@ -15,6 +15,16 @@ namespace ApiAuditoria.Controllers
             _repository = repository;
         }
 
+        /// <summary>
+        /// Inserta un nuevo registro de la tabla de monedas 
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// mo_codigo : Codigo de la moneda <br />
+        /// mo_descripcion : Nombre o descripcion de la moneda <br />
+        /// mo_estado : Indica si la moneda esta Activa (A), Inactiva (I) o Eliminada (X) <br /><br />
+        /// Procedimiento almacenado : api_IngresoMonedas
+        /// </remarks>
         [HttpPost]
         [Route("Ingreso")]
         public async Task<string> Ingreso([FromBody] Monedas monedas)
@@ -31,6 +41,16 @@ namespace ApiAuditoria.Controllers
             return JSONString;
         }
 
+        /// <summary>
+        /// Actualiza un registro de la tabla de monedas 
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// mo_codigo : Codigo de la moneda <br />
+        /// mo_descripcion : Nombre o descripcion de la moneda <br />
+        /// mo_estado : Indica si la moneda esta Activa (A), Inactiva (I) o Eliminada (X) <br /><br />
+        /// Procedimiento almacenado : api_ActualizaMonedas
+        /// </remarks>
         [HttpPost]
         [Route("Actualizacion")]
         public async Task<string> Actualizacion([FromBody] Monedas monedas)
@@ -47,6 +67,14 @@ namespace ApiAuditoria.Controllers
             return JSONString;
         }
 
+        /// <summary>
+        /// Consulta los registros de la tabla de monedas 
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// codigo : Codigo de la moneda <br /><br />
+        /// Procedimiento almacenado : api_ConsultaMonedas
+        /// </remarks>
         [HttpGet]
         [Route("Consulta/{codigo}")]
         public IEnumerable<Monedas> Get(int codigo)

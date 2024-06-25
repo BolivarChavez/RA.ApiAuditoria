@@ -15,6 +15,18 @@ namespace ApiAuditoria.Controllers
             _repository = repository;
         }
 
+        /// <summary>
+        /// Inserta un nuevo registro del catalogo de tareas asociadas a auditorias 
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// ct_empresa : Codigo de la empresa <br />
+        /// ct_proceso : Codigo de proceso de auditoria <br />
+        /// ct_codigo : Codigo de tarea asociada a un proceso de auditoria <br />
+        /// ct_descripcion : Nombre o descripcion de la tarea relacionada al proceso de auditoria <br />
+        /// ct_estado : Estado del registro (A) Activo, (I) Inactivo, (X) Eliminado <br /><br />
+        /// Procedimiento almacenado : api_IngresoCatalogoTareas
+        /// </remarks>
         [HttpPost]
         [Route("Ingreso")]
         public async Task<string> Ingreso([FromBody] CatalogoTareas catalogoTareas)
@@ -31,6 +43,18 @@ namespace ApiAuditoria.Controllers
             return JSONString;
         }
 
+        /// <summary>
+        /// Actualiza un registro del catalogo de tareas asociadas a auditorias 
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// ct_empresa : Codigo de la empresa <br />
+        /// ct_proceso : Codigo de proceso de auditoria <br />
+        /// ct_codigo : Codigo de tarea asociada a un proceso de auditoria <br />
+        /// ct_descripcion : Nombre o descripcion de la tarea relacionada al proceso de auditoria <br />
+        /// ct_estado : Estado del registro (A) Activo, (I) Inactivo, (X) Eliminado <br /><br />
+        /// Procedimiento almacenado : api_ActualizaCatalogoTareas
+        /// </remarks>
         [HttpPost]
         [Route("Actualizacion")]
         public async Task<string> Actualizacion([FromBody] CatalogoTareas catalogoTareas)
@@ -47,6 +71,14 @@ namespace ApiAuditoria.Controllers
             return JSONString;
         }
 
+        /// <summary>
+        /// Consulta los registros del catalogo de tareas asociadas a auditorias 
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// empresa : Codigo de la empresa <br /><br />
+        /// Procedimiento almacenado : api_ConsultaCatalogoTareas
+        /// </remarks>
         [HttpGet]
         [Route("Consulta/{empresa}")]
         public IEnumerable<CatalogoTareas> Get(int empresa)
