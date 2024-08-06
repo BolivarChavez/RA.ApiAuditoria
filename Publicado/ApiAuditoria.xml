@@ -1,0 +1,688 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiAuditoria</name>
+    </assembly>
+    <members>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaAsignacionController.Ingreso(ApiAuditoria.Models.AuditoriaAsignacion)">
+            <summary>
+            Asigna un responsable a una tarea relacionada a una auditoria
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            aa_empresa : Codigo de la empresa <br />
+            aa_auditoria : Codigo de la auditoria <br />
+            aa_tarea : Codigo de la tarea asignada a la auditoria <br />
+            aa_secuencia : Secuencia de asignacion de tarea <br />
+            aa_responsable : Codigo del responsable asignado a la tarea <br />
+            aa_tipo : Tipo de responsable. Responsable de Aduitoria (R), Conocimiento de proceso (P), Capacitacion (C) <br />
+            aa_rol : Para aquellos que son responsables, indica si es Auditor (A) o Supervisor o Jefe (J) <br />
+            aa_estado : Indica si el registro esta Activo (A), Inactivo (I) o Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_IngresoAuditoriaAsignacion
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaAsignacionController.Actualizacion(ApiAuditoria.Models.AuditoriaAsignacion)">
+            <summary>
+            Actualiza una tarea de auditoria que ha sido previamente asignada a un responsable
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            aa_empresa : Codigo de la empresa <br />
+            aa_auditoria : Codigo de la auditoria <br />
+            aa_tarea : Codigo de la tarea asignada a la auditoria <br />
+            aa_secuencia : Secuencia de asignacion de tarea <br />
+            aa_responsable : Codigo del responsable asignado a la tarea <br />
+            aa_tipo : Tipo de responsable. Responsable de Aduitoria (R), Conocimiento de proceso (P), Capacitacion (C) <br />
+            aa_rol : Para aquellos que son responsables, indica si es Auditor (A) o Supervisor o Jefe (J) <br />
+            aa_estado : Indica si el registro esta Activo (A), Inactivo (I) o Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaAuditoriaAsignacion
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaAsignacionController.Get(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta los responsables asignados a una tarea relacionada a una auditoria
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            auditoria : Codigo de la auditoria <br />
+            tarea : Codigo de la tarea asignada a la auditoria <br /><br />
+            Procedimiento almacenado : api_ConsultaAuditoriaAsignacion
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaDocumentoProcesosController.Ingreso(ApiAuditoria.Models.AuditoriaDocumentoProcesos)">
+            <summary>
+            Ingresa un nuevo proceso de un documento que pertenece a una tarea relacionada a una auditoria
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ad_empresa : Codigo de la empresa <br />
+            ad_auditoria : Codigo de la auditoria <br />
+            ad_tarea : Codigo de la tarea <br />
+            ad_codigo : Codigo del documento <br />
+            ad_secuencia : Secuencia de proceso del documento <br />
+            ad_fecha : Fecha de registro del proceso <br />
+            ad_auditor : Codigo de auditor <br />
+            ad_responsable : Codigo de responsable <br />
+            ad_observaciones : Observaciones o comentarios relacionados al proceso del documento <br />
+            ad_documento : Referencia a documentos de soporte <br />
+            ad_estado : Estado del proceso del documentos Activo (A), Inactivo (I), Eliminado (X), Cerrado (C), En Espera (E) <br /><br />
+            Procedimiento almacenado : api_IngresoAuditoriaDocumentoProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaDocumentoProcesosController.Actualizacion(ApiAuditoria.Models.AuditoriaDocumentoProcesos)">
+            <summary>
+            Actualiza un proceso de un documento que pertenece a una tarea relacionada a una auditoria
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ad_empresa : Codigo de la empresa <br />
+            ad_auditoria : Codigo de la auditoria <br />
+            ad_tarea : Codigo de la tarea <br />
+            ad_codigo : Codigo del documento <br />
+            ad_secuencia : Secuencia de proceso del documento <br />
+            ad_fecha : Fecha de registro del proceso <br />
+            ad_auditor : Codigo de auditor <br />
+            ad_responsable : Codigo de responsable <br />
+            ad_observaciones : Observaciones o comentarios relacionados al proceso del documento <br />
+            ad_documento : Referencia a documentos de soporte <br />
+            ad_estado : Estado del proceso del documentos Activo (A), Inactivo (I), Eliminado (X), Cerrado (C), En Espera (E) <br /><br />
+            Procedimiento almacenado : api_ActualizaAuditoriaDocumentoProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaDocumentoProcesosController.Get(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta los procesos de un documento que pertenece a una tarea relacionada a una auditoria
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            auditoria : Codigo de la auditoria <br />
+            tarea : Codigo de la tarea <br />
+            codigo : Codigo del documento <br /><br />
+            anio : Año de consulta de la auditoria. Cero (0) para todos los años  <br /><br />
+            Procedimiento almacenado : api_ConsultaAuditoriaDocumentoProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaDocumentosController.Ingreso(ApiAuditoria.Models.AuditoriaDocumentos)">
+            <summary>
+            Ingresa el contenido de un registro de plantilla (cheque, transferencia, etc.) 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ad_empresa : Codigo de la empresa <br />
+            ad_auditoria : Codigo de la auditoria <br />
+            ad_tarea : Codigo de la Tarea <br />
+            ad_codigo : Codigo del documento registrado <br />
+            ad_plantilla : Codigo de la plantilla relacionada al documento <br />
+            ad_referencia : Referencia de registro de ingreso individual o por plantilla <br />
+            ad_registro : Detalle del registro de documento <br />
+            ad_auditoria_origen : Codigo de auditoria origen desde la cual proviene el registro <br />
+            ad_responsable : Responsable principal de registro y revision de la informacion <br />
+            ad_estado : Estado del registro, indica si esta Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_IngresoAuditoriaDocumentos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaDocumentosController.Actualizacion(ApiAuditoria.Models.AuditoriaDocumentos)">
+            <summary>
+            Actualiza el contenido de un registro de plantilla (cheque, transferencia, etc.)
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ad_empresa : Codigo de la empresa <br />
+            ad_auditoria : Codigo de la auditoria <br />
+            ad_tarea : Codigo de la Tarea <br />
+            ad_codigo : Codigo del documento registrado <br />
+            ad_plantilla : Codigo de la plantilla relacionada al documento <br />
+            ad_referencia : Referencia de registro de ingreso individual o por plantilla <br />
+            ad_registro : Detalle del registro de documento <br />
+            ad_auditoria_origen : Codigo de auditoria origen desde la cual proviene el registro <br />
+            ad_responsable : Responsable principal de registro y revision de la informacion <br />
+            ad_estado : Estado del registro, indica si esta Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaAuditoriaDocumentos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaDocumentosController.Get(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta todas las lineas de una plantilla ingresada (cheque, transferencia, etc.) 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            auditoria : Codigo de la auditoria <br />
+            tarea : Codigo de la Tarea <br /><br />
+            plantilla : Codigo de la plantilla relacionada al documento
+            anio : Año de consulta de la auditoria. Cero (0) para todos los años
+            Procedimiento almacenado : api_ConsultaAuditoriaDocumentos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaGastosController.Ingreso(ApiAuditoria.Models.AuditoriaGastos)">
+            <summary>
+            Ingresa un registro de gasto relacionado a una auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ag_empresa : Codigo de la empresa <br />
+            ag_auditoria : Codigo de la auditoria <br />
+            ag_secuencia : Secuencia de registro de gasto <br />
+            ag_tipo : Tipo de Gasto <br />
+            ag_fecha_inicio : Fecha de inicio de referencia <br />
+            ag_fecha_fin : Fecha de fin de referencia <br />
+            ag_valor : Total de gasto <br />
+            ag_responsable : Codigo del responsable asociado al gasto de la auditoria <br />
+            ag_estado : Estado de registro Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_IngresoAuditoriaGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaGastosController.Actualizacion(ApiAuditoria.Models.AuditoriaGastos)">
+            <summary>
+            Actualiza un registro de gasto relacionado a una auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ag_empresa : Codigo de la empresa <br />
+            ag_auditoria : Codigo de la auditoria <br />
+            ag_secuencia : Secuencia de registro de gasto <br />
+            ag_tipo : Tipo de Gasto <br />
+            ag_fecha_inicio : Fecha de inicio de referencia <br />
+            ag_fecha_fin : Fecha de fin de referencia <br />
+            ag_valor : Total de gasto <br />
+            ag_responsable : Codigo del responsable asociado al gasto de la auditoria <br />
+            ag_estado : Estado de registro Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaAuditoriaGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaGastosController.Get(System.Int32,System.Int32)">
+            <summary>
+            Consulta los registros de gastos relacionados a una auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            auditoria : Codigo de la auditoria <br /><br />
+            Procedimiento almacenado : api_ConsultaAuditoriaGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriasController.Ingreso(ApiAuditoria.Models.Auditorias)">
+            <summary>
+            Ingresa un nuevo registro de auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            au_empresa : Codigo de la empresa <br />
+            au_codigo : Codigo de proceso de auditoria. Cero (0) para un nuevo registro. <br />
+            au_oficina_origen : Oficina desde la cual se origina la auditoria <br />
+            au_oficina_destino : Oficina objeto de la auditoria <br />
+            au_tipo_proceso : Tipo de proceso de auditoria <br />
+            au_fecha_inicio : Fecha de inicio de la auditoria <br />
+            au_fecha_cierre : Fecha de cierre de auditoria <br />
+            au_tipo : Tipo de auditoria Local (L) o Remota (R) <br />
+            au_observaciones : Comentario u obsrevaciones relacionadas a la auditoria. <br />
+            au_estado : Estado de auditoria (A) Abierta, (P) En proceso, (C) Cerrada, (X) Anulada <br /><br />
+            Procedimiento almacenado : api_IngresoAuditorias
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriasController.Actualizacion(ApiAuditoria.Models.Auditorias)">
+            <summary>
+            Actualiza un registro de auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            au_empresa : Codigo de la empresa <br />
+            au_codigo : Codigo de proceso de auditoria <br />
+            au_oficina_origen : Oficina desde la cual se origina la auditoria <br />
+            au_oficina_destino : Oficina objeto de la auditoria <br />
+            au_tipo_proceso : Tipo de proceso de auditoria <br />
+            au_fecha_inicio : Fecha de inicio de la auditoria <br />
+            au_fecha_cierre : Fecha de cierre de auditoria <br />
+            au_tipo : Tipo de auditoria Local (L) o Remota (R) <br />
+            au_observaciones : Comentario u obsrevaciones relacionadas a la auditoria. <br />
+            au_estado : Estado de auditoria (A) Abierta, (P) En proceso, (C) Cerrada, (X) Anulada <br /><br />
+            Procedimiento almacenado : api_ActualizaAuditorias
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriasController.Get(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta registros de auditorias
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            codigo : Codigo de proceso de auditoria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+            anio : Año de realizacion de la audioria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+            Procedimiento almacenado : api_ConsultaAuditorias
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriasController.ConsultaPlantilla(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta registros de auditorias relacionados a una plantilla especifica
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            codigo : Codigo de proceso de auditoria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+            anio : Año de realizacion de la audioria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+            plantilla : Codigo de plantilla asociada. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+            Procedimiento almacenado : api_ConsultaAuditoriasPlantillas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriasController.ConsultaResumen(System.Int32,System.Int32)">
+            <summary>
+            Consulta el resumen de los procesos de auditoria por año
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            anio : Año de consulta <br /><br />
+            Procedimiento almacenado : api_ResumenProcesosAuditoria
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriasController.CopiaAuditoria(ApiAuditoria.Models.Auditorias)">
+            <summary>
+            Copia registros de tareas y de plantillas no procesadas de una auditoria previa y 
+            los registra como una nueva auditoria
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            auditoria : Codigo de la auditoria que se va a copiar <br /><br />
+            Procedimiento almacenado : api_CopiaAuditoria
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaTareaProcesosController.Ingreso(ApiAuditoria.Models.AuditoriaTareaProcesos)">
+            <summary>
+            Ingresa un nuevo proceso asociado a una tarea de una auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            at_empresa : Codigo de la empresa <br />
+            at_auditoria : Codigo de la auditoria <br />
+            at_tarea : Codigo de la tarea <br />
+            at_secuencia : Secuencia del proceso relacionado a la tarea <br /> 
+            at_auditor : Codigo del auditor <br />
+            at_responsable : Codigo del responsable <br />
+            at_fecha : Fecha de registro del proceso <br />
+            at_observaciones : Observaciones o anotaciones relacionadas a la tarea <br />
+            at_estado : Estado del proceso de la tarea Activa (A), Inactiva (I), Eliminada (X) <br /><br />
+            Procedimiento almacenado : api_IngresoAuditoriaTareaProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaTareaProcesosController.Actualizacion(ApiAuditoria.Models.AuditoriaTareaProcesos)">
+            <summary>
+            Actualiza un registro de proceso asociado a una tarea de una auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            at_empresa : Codigo de la empresa <br />
+            at_auditoria : Codigo de la auditoria <br />
+            at_tarea : Codigo de la tarea <br />
+            at_secuencia : Secuencia del proceso relacionado a la tarea <br />
+            at_auditor : Codigo del auditor <br />
+            at_responsable : Codigo del responsable <br />
+            at_fecha : Fecha de registro del proceso <br />
+            at_observaciones : Observaciones o anotaciones relacionadas a la tarea <br />
+            at_estado : Estado del proceso de la tarea Activa (A), Inactiva (I), Eliminada (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaAuditoriaTareaProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaTareaProcesosController.Get(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta los procesos asociados a una tarea de una auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            auditoria : Codigo de la auditoria <br /><br />
+            tarea : Codigo de la tarea
+            Procedimiento almacenado : api_ConsultaAuditoriaTareaProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaTareasController.Ingreso(ApiAuditoria.Models.AuditoriaTareas)">
+            <summary>
+            Ingresa un nuevo proceso asociado a una tarea de una auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            at_empresa : Codigo de empresa <br />
+            at_auditoria : Codigo o numero de auditoria <br />
+            at_tarea : Codigo de tarea asociada a la auditoria <br />
+            at_oficina : Oficina en la cual se realiza la auditoria <br />
+            at_asignacion : Detalle de asignaciones <br />
+            at_estado : Indica si la tarea esta Abierta (A), En proceso (P), Cerrada (C) o Anulada (X) <br /><br />
+            Procedimiento almacenado : api_IngresoAuditoriaTareas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaTareasController.Actualizacion(ApiAuditoria.Models.AuditoriaTareas)">
+            <summary>
+            Actualiza un registro de asignacion de tarea a auditoria 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            at_empresa : Codigo de empresa <br />
+            at_auditoria : Codigo o numero de auditoria <br />
+            at_tarea : Codigo de tarea asociada a la auditoria <br />
+            at_oficina : Oficina en la cual se realiza la auditoria <br />
+            at_asignacion : Detalle de asignaciones <br />
+            at_estado : Indica si la tarea esta Abierta (A), En proceso (P), Cerrada (C) o Anulada (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaAuditoriaTareas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.AuditoriaTareasController.Get(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta de tareas asociadas a una auditoria
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de empresa <br />
+            auditoria : Codigo o numero de auditoria <br />
+            tarea : Codigo de tarea asociada a la auditoria <br /><br />
+            Procedimiento almacenado : api_ConsultaAuditoriaTareas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoGastosController.Ingreso(ApiAuditoria.Models.CatalogoGastos)">
+            <summary>
+            Inserta un nuevo registro del catalogo de gastos relacionados a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cg_empresa : Codigo de empresa <br />
+            cg_codigo : Codigo de tipo de gasto <br />
+            cg_descripion : Descripcion del tipo de gasto <br />
+            cg_estado : Estado de registro de tipo de gasto Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_IngresoCatalogoGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoGastosController.Actualizacion(ApiAuditoria.Models.CatalogoGastos)">
+            <summary>
+            Actualiza un registro del catalogo de gastos relacionados a auditorias
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cg_empresa : Codigo de empresa <br />
+            cg_codigo : Codigo de tipo de gasto <br />
+            cg_descripion : Descripcion del tipo de gasto <br />
+            cg_estado : Estado de registro de tipo de gasto Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaCatalogoGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoGastosController.Get(System.Int32)">
+            <summary>
+            Consulta registros de los catalogos de gastos relacionados a auditorias
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de empresa <br /><br />
+            Procedimiento almacenado : api_ConsultaCatalogoGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoPlantillasController.Ingreso(ApiAuditoria.Models.CatalogoPlantillas)">
+            <summary>
+            Inserta un nuevo registro del catalogo de plantillas de informacion para auditar 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cp_empresa : Codigo de la empresa <br />
+            cp_codigo : Codigo de la plantilla <br />
+            cp_descripcion : Descripcion de la plantilla <br />
+            cp_estado : Estado de registro Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_IngresoCatalogoPlantillas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoPlantillasController.Actualizacion(ApiAuditoria.Models.CatalogoPlantillas)">
+            <summary>
+            Actualiza un registro del catalogo de plantillas de informacion para auditar 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cp_empresa : Codigo de la empresa <br />
+            cp_codigo : Codigo de la plantilla <br />
+            cp_descripcion : Descripcion de la plantilla <br />
+            cp_estado : Estado de registro Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaCatalogoPlantillas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoPlantillasController.Get(System.Int32)">
+            <summary>
+            Consulta los registros del catalogo de plantillas de informacion para auditar 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br /><br />
+            Procedimiento almacenado : api_ConsultaCatalogoPlantillas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoProcesosController.Ingreso(ApiAuditoria.Models.CatalogoProcesos)">
+            <summary>
+            Ingresa un nuevo registro del catalogo de procesos asociados a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cp_empresa : Codigo de empresa <br />
+            cp_codigo : Codigo del tipo de proceso de auditoria <br />
+            cp_descripcion : Nombre o descripcion del proceso de auditoria <br />
+            cp_estado : Indica si el registro es Activo (A) o Inactivo (I) o Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_IngresoCatalogoProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoProcesosController.Actualizacion(ApiAuditoria.Models.CatalogoProcesos)">
+            <summary>
+            Actualiza un registro del catalogo de procesos asociados a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cp_empresa : Codigo de empresa <br />
+            cp_codigo : Codigo del tipo de proceso de auditoria <br />
+            cp_descripcion : Nombre o descripcion del proceso de auditoria <br />
+            cp_estado : Indica si el registro es Activo (A) o Inactivo (I) o Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaCatalogoProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoProcesosController.Get(System.Int32)">
+            <summary>
+            Consulta los registros del catalogo de procesos asociados a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de empresa <br /><br />
+            Procedimiento almacenado : api_ConsultaCatalogoProcesos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoTareasController.Ingreso(ApiAuditoria.Models.CatalogoTareas)">
+            <summary>
+            Inserta un nuevo registro del catalogo de tareas asociadas a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ct_empresa : Codigo de la empresa <br />
+            ct_proceso : Codigo de proceso de auditoria <br />
+            ct_codigo : Codigo de tarea asociada a un proceso de auditoria <br />
+            ct_descripcion : Nombre o descripcion de la tarea relacionada al proceso de auditoria <br />
+            ct_estado : Estado del registro (A) Activo, (I) Inactivo, (X) Eliminado <br /><br />
+            Procedimiento almacenado : api_IngresoCatalogoTareas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoTareasController.Actualizacion(ApiAuditoria.Models.CatalogoTareas)">
+            <summary>
+            Actualiza un registro del catalogo de tareas asociadas a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            ct_empresa : Codigo de la empresa <br />
+            ct_proceso : Codigo de proceso de auditoria <br />
+            ct_codigo : Codigo de tarea asociada a un proceso de auditoria <br />
+            ct_descripcion : Nombre o descripcion de la tarea relacionada al proceso de auditoria <br />
+            ct_estado : Estado del registro (A) Activo, (I) Inactivo, (X) Eliminado <br /><br />
+            Procedimiento almacenado : api_ActualizaCatalogoTareas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CatalogoTareasController.Get(System.Int32)">
+            <summary>
+            Consulta los registros del catalogo de tareas asociadas a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br /><br />
+            Procedimiento almacenado : api_ConsultaCatalogoTareas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CategoriaGastosController.Ingreso(ApiAuditoria.Models.CategoriaGastos)">
+            <summary>
+            Inserta un nuevo registro del catalogo de categorias de gastos relacionados a auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cg_empresa : Codigo de empresa <br />
+            cg_codigo : Codigo de la categoria de gasto <br />
+            cg_descripion : Descripcion de la categoria de gasto <br />
+            cg_estado : Estado de registro de la categoria de gasto Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_IngresoCategoriaGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CategoriaGastosController.Actualizacion(ApiAuditoria.Models.CategoriaGastos)">
+            <summary>
+            Actualiza un registro del catalogo catalogo de categorias de gastos relacionados a auditorias
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            cg_empresa : Codigo de empresa <br />
+            cg_codigo : Codigo de la categoria de gasto <br />
+            cg_descripion : Descripcion de la categoria de gasto <br />
+            cg_estado : Estado de registro de la categoria de gasto Activo (A), Inactivo (I), Eliminado (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaCategoriaGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CategoriaGastosController.Get(System.Int32)">
+            <summary>
+            Consulta registros de las categrias de gastos relacionados a auditorias
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de empresa <br /><br />
+            Procedimiento almacenado : api_ConsultaCategoriaGastos
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CotizacionesController.Ingreso(ApiAuditoria.Models.Cotizaciones)">
+            <summary>
+            Inserta un nuevo registro de la tabla de cotizaciones 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            co_empresa : Codigo de la empresa <br />
+            co_moneda_base : Codigo de la moneda base de la cotizacion <br />
+            co_moneda_destino : Codigo de la moneda de referencia para la cotizacion <br />
+            co_cotizacion : Valor de cotizacion hacia la moneda destino <br />
+            co_fecha_vigencia : Fecha a partir de la cual la cotizacion esta vigente <br />
+            co_estado : Indica si el registro esta Activo (A) o Inactivo (I) <br /><br />
+            Procedimiento almacenado : api_IngresoCotizaciones
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CotizacionesController.Actualizacion(ApiAuditoria.Models.Cotizaciones)">
+            <summary>
+            Actualiza un registro de la tabla de cotizaciones
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            co_empresa : Codigo de la empresa <br />
+            co_moneda_base : Codigo de la moneda base de la cotizacion <br />
+            co_moneda_destino : Codigo de la moneda de referencia para la cotizacion <br />
+            co_cotizacion : Valor de cotizacion hacia la moneda destino <br />
+            co_fecha_vigencia : Fecha a partir de la cual la cotizacion esta vigente <br />
+            co_estado : Indica si el registro esta Activo (A) o Inactivo (I) <br /><br />
+            Procedimiento almacenado : api_ActualizaCotizaciones
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.CotizacionesController.Get(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Consulta los registros de la tabla de cotizaciones para una combinacion de monedas
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            empresa : Codigo de la empresa <br />
+            monedaBase : Codigo de la moneda base de la cotizacion <br />
+            monedaDestino : Codigo de la moneda de referencia para la cotizacion <br />
+            anio : Año de referencia para la consulta <br /><br />
+            Procedimiento almacenado : api_ConsultaCotizaciones
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.MonedasController.Ingreso(ApiAuditoria.Models.Monedas)">
+            <summary>
+            Inserta un nuevo registro de la tabla de monedas 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            mo_codigo : Codigo de la moneda <br />
+            mo_descripcion : Nombre o descripcion de la moneda <br />
+            mo_estado : Indica si la moneda esta Activa (A), Inactiva (I) o Eliminada (X) <br /><br />
+            Procedimiento almacenado : api_IngresoMonedas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.MonedasController.Actualizacion(ApiAuditoria.Models.Monedas)">
+            <summary>
+            Actualiza un registro de la tabla de monedas 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            mo_codigo : Codigo de la moneda <br />
+            mo_descripcion : Nombre o descripcion de la moneda <br />
+            mo_estado : Indica si la moneda esta Activa (A), Inactiva (I) o Eliminada (X) <br /><br />
+            Procedimiento almacenado : api_ActualizaMonedas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.MonedasController.Get(System.Int32)">
+            <summary>
+            Consulta los registros de la tabla de monedas 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            codigo : Codigo de la moneda <br /><br />
+            Procedimiento almacenado : api_ConsultaMonedas
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.ResponsablesController.Ingreso(ApiAuditoria.Models.Responsables)">
+            <summary>
+            Inserta un nuevo registro de la tabla de responsables de auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            re_empresa : Codigo de empresa <br />
+            re_codigo  : Codigo del responsable <br />
+            re_nombre  : Nombre del responsable <br />
+            re_cargo   : Descripcion del cargo del responsable <br />
+            re_oficina : Codigo de la oficina de origen del responsable <br />
+            re_tipo    : Tipo de responsable (A) Auditor, (J) Jefe de auditoria, (R) Responsable de informacion <br />
+            re_correo  : Correo electronico del responsable <br />
+            re_usuario : Nombre de usuario relacionado al responsable <br />
+            re_estado  : Estado del registro (A) Activo, (I) Inactivo, (X) Eliminado <br /><br />
+            Procedimiento almacenado : api_IngresoResponsables
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.ResponsablesController.Actualizacion(ApiAuditoria.Models.Responsables)">
+            <summary>
+            Actualiza un registro de la tabla de responsables de auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            re_empresa : Codigo de empresa <br />
+            re_codigo  : Codigo del responsable <br />
+            re_nombre  : Nombre del responsable <br />
+            re_cargo   : Descripcion del cargo del responsable <br />
+            re_oficina : Codigo de la oficina de origen del responsable <br />
+            re_tipo    : Tipo de responsable (A) Auditor, (J) Jefe de auditoria, (R) Responsable de informacion <br />
+            re_correo  : Correo electronico del responsable <br />
+            re_usuario : Nombre de usuario relacionado al responsable <br />
+            re_estado  : Estado del registro (A) Activo, (I) Inactivo, (X) Eliminado <br /><br />
+            Procedimiento almacenado : api_ActualizaResponsables
+            </remarks>
+        </member>
+        <member name="M:ApiAuditoria.Controllers.ResponsablesController.Get(System.Int32)">
+            <summary>
+            Consulta los registros de la tabla de responsables de auditorias 
+            </summary>
+            <remarks>
+            <b>Parametros</b><br />
+            codigo : Codigo de empresa <br /><br />
+            Procedimiento almacenado : api_ConsultaResponsables
+            </remarks>
+        </member>
+    </members>
+</doc>

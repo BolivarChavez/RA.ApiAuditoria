@@ -27,6 +27,7 @@ namespace ApiAuditoria.Controllers
         /// ag_fecha_inicio : Fecha de inicio de referencia <br />
         /// ag_fecha_fin : Fecha de fin de referencia <br />
         /// ag_valor : Total de gasto <br />
+        /// ag_responsable : Codigo del responsable asociado al gasto de la auditoria <br />
         /// ag_estado : Estado de registro Activo (A), Inactivo (I), Eliminado (X) <br /><br />
         /// Procedimiento almacenado : api_IngresoAuditoriaGastos
         /// </remarks>
@@ -58,6 +59,7 @@ namespace ApiAuditoria.Controllers
         /// ag_fecha_inicio : Fecha de inicio de referencia <br />
         /// ag_fecha_fin : Fecha de fin de referencia <br />
         /// ag_valor : Total de gasto <br />
+        /// ag_responsable : Codigo del responsable asociado al gasto de la auditoria <br />
         /// ag_estado : Estado de registro Activo (A), Inactivo (I), Eliminado (X) <br /><br />
         /// Procedimiento almacenado : api_ActualizaAuditoriaGastos
         /// </remarks>

@@ -8,6 +8,6 @@ namespace ApiAuditoria.Interfaces
 
         IEnumerable<Retorno> Actualizacion(AuditoriaDocumentos auditoriaDocumentos);
 
-        IEnumerable<AuditoriaDocumentos> Consulta(int empresa, int auditoria, int tarea, int plantilla);
+        IEnumerable<AuditoriaDocumentos> Consulta(int empresa, int auditoria, int tarea, int plantilla, int anio);
     }
 }

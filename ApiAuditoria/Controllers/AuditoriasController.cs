@@ -88,17 +88,86 @@ namespace ApiAuditoria.Controllers
         /// <b>Parametros</b><br />
         /// empresa : Codigo de la empresa <br />
         /// codigo : Codigo de proceso de auditoria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+        /// anio : Año de realizacion de la audioria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
         /// Procedimiento almacenado : api_ConsultaAuditorias
         /// </remarks>
         [HttpGet]
-        [Route("Consulta/{empresa}/{codigo}")]
-        public IEnumerable<Auditorias> Get(int empresa, int codigo)
+        [Route("Consulta/{empresa}/{codigo}/{anio}")]
+        public IEnumerable<Auditorias> Get(int empresa, int codigo, int anio)
         {
             List<Auditorias> list_auditorias;
             string JSONString = string.Empty;
 
-            list_auditorias = _repository.Consulta(empresa, codigo).ToList();
+            list_auditorias = _repository.Consulta(empresa, codigo, anio).ToList();
             return list_auditorias;
+        }
+
+        /// <summary>
+        /// Consulta registros de auditorias relacionados a una plantilla especifica
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// empresa : Codigo de la empresa <br />
+        /// codigo : Codigo de proceso de auditoria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+        /// anio : Año de realizacion de la audioria. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+        /// plantilla : Codigo de plantilla asociada. Cero (0) para consultar todos los registros de auditorias ingresados <br /><br />
+        /// Procedimiento almacenado : api_ConsultaAuditoriasPlantillas
+        /// </remarks>
+        [HttpGet]
+        [Route("ConsultaPlantilla/{empresa}/{codigo}/{anio}/{plantilla}")]
+        public IEnumerable<Auditorias> ConsultaPlantilla(int empresa, int codigo, int anio, int plantilla)
+        {
+            List<Auditorias> list_auditorias;
+            string JSONString = string.Empty;
+
+            list_auditorias = _repository.ConsultaPlantilla(empresa, codigo, anio, plantilla).ToList();
+            return list_auditorias;
+        }
+
+        /// <summary>
+        /// Consulta el resumen de los procesos de auditoria por año
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// empresa : Codigo de la empresa <br />
+        /// anio : Año de consulta <br /><br />
+        /// Procedimiento almacenado : api_ResumenProcesosAuditoria
+        /// </remarks>
+        [HttpGet]
+        [Route("ConsultaResumen/{empresa}/{anio}")]
+        public IEnumerable<AuditoriaResumen> ConsultaResumen(int empresa, int anio)
+        {
+            List<AuditoriaResumen> list_auditorias;
+            string JSONString = string.Empty;
+
+            list_auditorias = _repository.ConsultaResumen(empresa, anio).ToList();
+            return list_auditorias;
+        }
+
+        /// <summary>
+        /// Copia registros de tareas y de plantillas no procesadas de una auditoria previa y 
+        /// los registra como una nueva auditoria
+        /// </summary>
+        /// <remarks>
+        /// <b>Parametros</b><br />
+        /// empresa : Codigo de la empresa <br />
+        /// auditoria : Codigo de la auditoria que se va a copiar <br /><br />
+        /// Procedimiento almacenado : api_CopiaAuditoria
+        /// </remarks>
+        [HttpPost]
+        [Route("CopiaAuditoria")]
+        public async Task<string> CopiaAuditoria([FromBody] Auditorias auditoria)
+        {
+            List<Retorno> list_retorno;
+            string JSONString = string.Empty;
+
+            await Task.Run(() =>
+            {
+                list_retorno = _repository.CopiaAuditoria(auditoria).ToList();
+                JSONString = JsonSerializer.Serialize(list_retorno);
+            });
+
+            return JSONString;
         }
     }
 }

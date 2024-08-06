@@ -40,7 +40,7 @@ namespace ApiAuditoria.Gateways.Repository
             return Context.Retorno.FromSqlRaw<Retorno>(sp_api, parms.ToArray()).ToList();
         }
 
-        public IEnumerable<AuditoriaDocumentoProcesos> Consulta(int empresa, int auditoria, int tarea, int codigo)
+        public IEnumerable<AuditoriaDocumentoProcesos> Consulta(int empresa, int auditoria, int tarea, int codigo, int anio)
         {
             string sp_api = "EXEC api_ConsultaAuditoriaDocumentoProcesos @i_ad_empresa, @i_ad_auditoria, @i_ad_tarea, @i_ad_codigo";
 
@@ -49,7 +49,8 @@ namespace ApiAuditoria.Gateways.Repository
                 new SqlParameter { ParameterName = "@i_ad_empresa", Value = empresa},
                 new SqlParameter { ParameterName = "@i_ad_auditoria", Value = auditoria},
                 new SqlParameter { ParameterName = "@i_ad_tarea", Value = tarea},
-                new SqlParameter { ParameterName = "@i_ad_codigo", Value = codigo}
+                new SqlParameter { ParameterName = "@i_ad_codigo", Value = codigo},
+                new SqlParameter { ParameterName = "@i_anio", Value = anio}
             };
 
             return Context.AuditoriaDocumentoProcesos.FromSqlRaw<AuditoriaDocumentoProcesos>(sp_api, parms.ToArray()).ToList();

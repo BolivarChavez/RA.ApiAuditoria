@@ -90,16 +90,17 @@ namespace ApiAuditoria.Controllers
         /// auditoria : Codigo de la auditoria <br />
         /// tarea : Codigo de la Tarea <br /><br />
         /// plantilla : Codigo de la plantilla relacionada al documento
+        /// anio : Año de consulta de la auditoria. Cero (0) para todos los años
         /// Procedimiento almacenado : api_ConsultaAuditoriaDocumentos
         /// </remarks>
         [HttpGet]
-        [Route("Consulta/{empresa}/{auditoria}/{tarea}/{plantilla}")]
-        public IEnumerable<AuditoriaDocumentos> Get(int empresa, int auditoria, int tarea, int plantilla)
+        [Route("Consulta/{empresa}/{auditoria}/{tarea}/{plantilla}/{anio}")]
+        public IEnumerable<AuditoriaDocumentos> Get(int empresa, int auditoria, int tarea, int plantilla, int anio)
         {
             List<AuditoriaDocumentos> list_auditoria_documento;
             string JSONString = string.Empty;
 
-            list_auditoria_documento = _repository.Consulta(empresa, auditoria, tarea, plantilla).ToList();
+            list_auditoria_documento = _repository.Consulta(empresa, auditoria, tarea, plantilla, anio).ToList();
             return list_auditoria_documento;
         }
     }

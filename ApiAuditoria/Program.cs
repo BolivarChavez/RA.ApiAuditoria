@@ -20,6 +20,7 @@ builder.Services.AddScoped<ICatalogoGastosRepository, CatalogoGastosRepository>(
 builder.Services.AddScoped<ICatalogoPlantillasRepository, CatalogoPlantillasRepository>();
 builder.Services.AddScoped<ICatalogoProcesosRepository, CatalogoProcesosRepository>();
 builder.Services.AddScoped<ICatalogoTareasRepository, CatalogoTareasRepository>();
+builder.Services.AddScoped<ICategoriaGastosRepository, CategoriaGastosRepository>();
 builder.Services.AddScoped<ICotizacionesRepository, CotizacionesRepository>();
 builder.Services.AddScoped<IMonedasRepository, MonedasRepository>();
 builder.Services.AddScoped<IResponsablesRepository, ResponsablesRepository>();
